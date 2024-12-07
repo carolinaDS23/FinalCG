@@ -20,10 +20,11 @@ router.get('/agregarPersonal', controllers.agregarPersonal);
 router.post('/agregarPersonal', controllers.postAgregarPersonal);
 router.get('/editarPersonal/:id', controllers.getEditarPersonal);
 router.post('/updatePersonal/:id', controllers.postUpdatePersonal);
-
 router.post('/deletePersonal/:id', controllers.postDeletePersonal);
 router.get('/buscarPersonal', controllers.buscarPersonal);
-router.post('/buscarPersonal', controllers.buscarPersonalResultados);
+router.post('/resultadosPersonal', controllers.buscarPersonalResultados);
+
+
 //Rutas de Oficina
 router.get('/oficinas', controllers.listOficina);
 router.get('/agregarOficina', controllers.agregarOficina);

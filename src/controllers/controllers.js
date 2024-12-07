@@ -39,7 +39,7 @@ const getEditarPersonal = (req, res, next) => {
             console.error(err);
             return;
         }
-        res.render('editPersona', { item: row[0], title: "Editar persona" });
+        res.render('editarPersonal', { item: row[0], title: "Editar persona" });
     });
 };
 
@@ -84,19 +84,29 @@ const postDeletePersonal = (req, res, next) => {
 
 
 const buscarPersonal = (req, res, next) => {
-  res.render('buscarPersonal', { title: "Buscar" });
+  res.render('buscarPersonal', { title: "Buscar Personal" });
 };
 
 const buscarPersonalResultados = (req, res, next) => {
-  var db = req.app.get("db");
-  var keyword = req.body.keyword;
+  const db = req.app.get("db");
+  const keyword = req.body.keyword;
+
   const query = 'SELECT nombre, email FROM personal WHERE nombre LIKE ?';
   db.query(query, [`%${keyword}%`], (err, rows) => {
-    if (err) throw err;
-    
-    res.render('resultadosPersonal', { personal: rows, title: "Resultados" });
-});
+    if (err) {
+      console.error(err);
+      return next(err);
+    }
+
+    res.render('resultadosPersonal', { personal: rows, title: "Resultados de búsqueda" });
+  });
 };
+
+
+
+
+
+
 
 
 //OFICINAS
@@ -220,4 +230,5 @@ const listOficina= (req, res, next) => {
     postDeleteOficina,
     buscarOficina,
     buscarOficinaResultados
-};
+  
+  };

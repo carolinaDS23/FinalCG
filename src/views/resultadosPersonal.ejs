@@ -4,7 +4,10 @@
   <%- include('./head.ejs') %>
 
   <body>
-    <h1>Lista de Personal</h1> 
+    <h1>
+      <%= title %>
+  </h1>
+
     <ul>
         <% personal.forEach(element => { %> <!-- busca personas porque en el array del controlador se llama asi -->
            
