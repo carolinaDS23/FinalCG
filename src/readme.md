@@ -6,9 +6,16 @@
 
 ## URL github: https://github.com/carolinaDS23/FINAL
 
-### https://youtu.be/UpOmv-AghCc
+###
 
 ## Proyecto CRUD con Express, NodeJs, MySQL y Docker 
+
+## Resumen de Flujo con Docker
+## Clonar el código en la nueva máquina.
+## Instalar Docker y Docker Compose.
+## Ejecutar docker-compose up --build.
+## Comprobar la base de datos desde el contenedor si es necesario.
+## Acceder a la aplicación desde http://localhost:3000.
 
 
 
