@@ -3,14 +3,20 @@
   <%- include('./head.ejs') %>
   
   <body>
-    
     <h1>Agregar Personal</h1> 
     <form action="/agregarPersonal" method="post">
-        <input type="text" name="nombre" placeholder="nombre">
-        <input type="email" name="email" placeholder="email">
-        <input type="number" name="oficina.id" placeholder="oficina">
+        <input type="text" name="nombre" placeholder="nombre" required>
+        <input type="email" name="email" placeholder="email" required>
+        
+        <label for="oficina_id">Oficina:</label>
+        <select name="oficina_id" id="oficina_id" required>
+          <option value="" disabled selected>Seleccione una oficina</option>
+          <% oficinas.forEach(oficina => { %>
+            <option value="<%= oficina.id %>"><%= oficina.denominacion %></option>
+          <% }); %>
+        </select>
+        
         <button type="submit">Agregar</button>
     </form>
-
   </body>
 </html>
